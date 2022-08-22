@@ -1,3 +1,5 @@
+
+
 const express = require('express')
 
 exports.routes = (() =>{
@@ -5,4 +7,5 @@ exports.routes = (() =>{
 
     router = require('./AuthRoute')(router)
     return router;
-})
+})()
+

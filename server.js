@@ -2,10 +2,14 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-const router = require("./Route")
+const router = require("./Route/index").routes
+
 var corsOptions = {
-    origin: "http://localhost:8081"
+    origin: "*"
 };
+
+
+
 app.use(cors(corsOptions));
 //parse request of content-type - application/json
 app.use(bodyParser.json());
@@ -14,9 +18,11 @@ app.use(bodyParser.urlencoded({
     extended:true
 }));
 
-app.use('/api', router.routes)
+
+
+app.use('/api', router)
 //simple route
-app.get("/", (req,res) =>{
+app.get('/', (req,res) =>{
     res.json({
         message:"Welcome to maisonier gestion application"
     })

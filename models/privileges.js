@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.Privileges.belongToMany(models.utilisateurs,{through: utilisateursprivileges})
+      models.Privileges.belongsToMany(models.Utilisateurs,{through: models.UtilisateursPrivileges})
     }
   }
   Privileges.init({

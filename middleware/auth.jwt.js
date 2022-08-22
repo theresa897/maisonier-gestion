@@ -11,7 +11,7 @@ module.exports = {
             userid: userData.userid
         },
         SECRET,{
-            expiresIn: '24h'
+            expiresIn: 1 * 24 *60 * 60 * 1000
         });
     }
 }
